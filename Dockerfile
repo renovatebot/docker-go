@@ -2,7 +2,7 @@ FROM renovate/base
 
 USER root
 
-RUN apt-get update && apt-get install -y wget && apt-get clean
+RUN apt-get update && apt-get install -y wget git && apt-get clean
 
 ENV GOLANG_VERSION 1.11.1
 
