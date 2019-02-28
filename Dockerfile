@@ -2,7 +2,7 @@ FROM renovate/base@sha256:8cba78f1fc4d5b8d82dcb976cb25b8bef809ff07eb594cd821c5cb
 
 USER root
 
-RUN apt-get update && apt-get install -y wget git && apt-get clean
+RUN apt-get update && apt-get install -y wget git bzr && apt-get clean
 
 ENV GOLANG_VERSION 1.11.5
 
