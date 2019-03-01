@@ -4,7 +4,7 @@ USER root
 
 RUN apt-get update && apt-get install -y wget git bzr && apt-get clean
 
-ENV GOLANG_VERSION 1.11.5
+ENV GOLANG_VERSION 1.12
 
 RUN wget -q -O go.tgz "https://golang.org/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz" && \
 	tar -C /usr/local -xzf go.tgz && \
