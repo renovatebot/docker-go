@@ -21,3 +21,6 @@ ENV CGO_ENABLED=0
 ENV GO111MODULE=on
 
 USER ubuntu
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
