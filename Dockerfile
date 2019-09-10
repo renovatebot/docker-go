@@ -2,7 +2,7 @@ FROM renovate/base@sha256:7f0f4a49da8683be57a058b7784faa8e7fa38eddf6f42112ba919f
 
 USER root
 
-RUN apt-get update && apt-get install -y wget git bzr && apt-get clean
+RUN apt-get update && apt-get install -y wget git bzr mercurial && apt-get clean
 
 ENV GOLANG_VERSION 1.12.9
 
