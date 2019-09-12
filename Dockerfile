@@ -18,5 +18,6 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 ENV CGO_ENABLED=0
+ENV GOPROXY=direct GOSUMDB=off
 
 USER ubuntu
