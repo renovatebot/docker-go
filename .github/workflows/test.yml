@@ -42,7 +42,7 @@ jobs:
           CACHE_HIT: ${{ steps.docker-cache.outputs.cache-hit }}
 
       - name: Test the Docker images
-        run: docker run --rm -t ${DOCKER_REPO} go --version
+        run: docker run --rm -t ${DOCKER_REPO} go version
 
       - name: Image history latest
         run: docker history ${DOCKER_REPO}
