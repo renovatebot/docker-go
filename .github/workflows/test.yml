@@ -46,12 +46,7 @@ jobs:
             .
 
       - name: Test the Docker image
-        run: |
-          docker run --rm -t ${DOCKER_REPO} go version
-          docker run --rm -t -v $(pwd)/test/simple:/src -w /src ${DOCKER_REPO} go get -d ./...
-          git checkout -f
-          docker run --rm -t -v $(pwd)/test/simple:/src -w /src ${DOCKER_REPO} go mod tidy
-          git checkout -f
+        run: ./run-tests.sh
 
       - name: Image history latest
         run: docker history ${DOCKER_REPO}
