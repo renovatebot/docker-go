@@ -33,9 +33,9 @@ jobs:
           path: .cache
           key: ${{ runner.os }}-docker-${{ hashFiles('Dockerfile') }}
           restore-keys: |
-            ${{ runner.os }}-docker
+            ${{ runner.os }}-docker-
 
-      - name: Build the Docker images
+      - name: Build the Docker image
         run: |
           cache_from=$([ -d .cache ] && echo -n '--cache-from=type=local,src=.cache' || echo -n '')
           docker buildx build \
@@ -45,8 +45,13 @@ jobs:
             $cache_from \
             .
 
-      - name: Test the Docker images
-        run: docker run --rm -t ${DOCKER_REPO} go version
+      - name: Test the Docker image
+        run: |
+          docker run --rm -t ${DOCKER_REPO} go version
+          docker run --rm -t -v $(pwd)/test/simple:/usr/src/app ${DOCKER_REPO} go get -d ./...
+          git checkout -f
+          docker run --rm -t -v $(pwd)/test/simple:/usr/src/app ${DOCKER_REPO} go mod tidy
+          git checkout -f
 
       - name: Image history latest
         run: docker history ${DOCKER_REPO}
