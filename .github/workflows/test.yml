@@ -32,7 +32,7 @@ jobs:
 
       - name: Build the Docker images
         run: |
-          cache_from=$(["$CACHE_HIT" = "true" ] && echo '--cache-from=type=local,src=.cache')
+          cache_from=$([ "$CACHE_HIT" = "true" ] && echo '--cache-from=type=local,src=.cache')
           docker buildx build \
             --load \
             --tag ${DOCKER_REPO} \
