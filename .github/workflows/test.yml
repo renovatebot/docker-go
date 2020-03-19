@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 env:
   PLATFORM: linux/amd64
-  DOCKER_CACHE_TAG: _cache
   DOCKER_REPO: renovate/go
 
 jobs:
