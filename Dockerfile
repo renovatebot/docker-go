@@ -1,10 +1,14 @@
-FROM renovate/base@sha256:46ea1196178f0bc0a3c54e2d7ee701ab7169605788b2d7f07ff4f7267670bc45
+FROM renovate/base@sha256:175e2d040a8dbd7900d815621e386efed1ca9c4f40e5aaf1902d4632f1bf645f
 
 USER root
 
-RUN apt-get update && apt-get install -y wget git bzr mercurial && apt-get clean
+RUN apt-get update && apt-get install -y \
+	wget \
+	bzr \
+	mercurial \
+	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.13
+ENV GOLANG_VERSION 1.14
 
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/home/ubuntu/go/bin:$PATH
