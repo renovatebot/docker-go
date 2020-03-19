@@ -5,4 +5,4 @@ set -e
 
 init_fixtures
 
-run_test simple mod tidy11
+run_test simple mod tidy
