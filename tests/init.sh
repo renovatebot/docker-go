@@ -10,4 +10,5 @@ init_fixtures () {
 
 run_test(){
     docker run --rm -t -v $(pwd)/.tmp/$1:/src -w /src ${DOCKER_REPO} go ${@:2}
+    echo $?
 }
