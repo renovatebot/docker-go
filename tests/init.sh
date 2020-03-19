@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 init_fixtures () {
     rm -rf ./.tmp/

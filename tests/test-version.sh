@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 . ./tests/init.sh
 
