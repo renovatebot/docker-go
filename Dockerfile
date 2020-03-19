@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y \
 COPY --from=build /usr/local/go /usr/local/go
 
 ENV GOPATH /go
-ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+ENV PATH "$GOPATH/bin:/usr/local/go/bin:$PATH"
 
-RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chown -R ubuntu:0 && chmod -R 775 "$GOPATH"
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chown -R ubuntu:0 $GOPATH && chmod -R 775 $GOPATH
 WORKDIR $GOPATH
 
 ENV CGO_ENABLED=0
