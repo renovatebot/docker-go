@@ -4,7 +4,7 @@ init_fixtures () {
     rm -rf ./.tmp/
     mkdir -p ./.tmp/
     cp -R ./tests/__fixtures__/* ./.tmp/
-    chown -R 1000:0 ./.tmp/
+    chmod -R 777 ./.tmp/
 }
 
 run_test(){
