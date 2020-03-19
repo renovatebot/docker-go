@@ -1,0 +1,51 @@
+name: Test CI
+
+on: [push, pull_request]
+
+env:
+  PLATFORM: linux/amd64
+  DOCKER_CACHE_TAG: _cache
+  DOCKER_REPO: renovate/go
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    steps:
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: v0.3.1
+
+      - uses: actions/checkout@v2
+
+      - name: docker cache 
+        id: docker-cache
+        uses: actions/cache@v1
+        with:
+          path: .cache
+          key: ${{ runner.os }}-docker
+
+      - name: Build the Docker images
+        run: |
+          cache_from=$(["$CACHE_HIT" = "true" ] && echo '--cache-from=type=local,src=.cache')
+          docker buildx build \
+            --load \
+            --tag ${DOCKER_REPO} \
+            $cache_from \
+            .
+        env:
+          CACHE_HIT: ${{ steps.docker-cache.outputs.cache-hit }}
+
+      - name: Test the Docker images
+        run: docker run --rm -t ${DOCKER_REPO} go --version
+
+      - name: Image history latest
+        run: docker history ${DOCKER_REPO}
+
+      - name: Images size
+        run: docker image ls | grep ${DOCKER_REPO}
