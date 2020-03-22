@@ -9,6 +9,7 @@ on:
 env:
   PLATFORM: linux/amd64
   DOCKER_REPO: renovate/go
+  DOCKER_TAGS: 1.14
 
 jobs:
   build:
@@ -53,3 +54,11 @@ jobs:
 
       - name: Images size
         run: docker image ls | grep ${DOCKER_REPO}
+
+      - name: Publish (dry-run)
+        uses: renovatebot/gh-action@v0
+        with:
+          command: "publish-docker"
+          image: ${{ env.DOCKER_REPO }}
+          tags: latest;${{ env.DOCKER_TAGS }}
+          dry-run: true
