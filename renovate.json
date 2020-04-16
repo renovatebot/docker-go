@@ -1,25 +1,4 @@
 {
-  "extends": [
-    "config:base",
-    ":rebaseStalePrs",
-    ":masterIssue",
-    ":semanticCommits",
-    ":semanticCommitScope(deps)"
-  ],
-  "pinDigests": true,
-  "packageRules": [
-    {
-      "updateTypes": ["major"],
-      "masterIssueApproval": true
-    }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
-    }
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>renovatebot/presets-internal:docker-images"]
 }
