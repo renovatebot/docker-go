@@ -1,0 +1,5 @@
+{
+  "image": "go",
+  "startVersion": "1.14.2",
+  "cache": "docker-build-cache"
+}
