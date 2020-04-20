@@ -42,9 +42,17 @@ jobs:
         with:
           command: "docker-builder"
           last-only: true
+          build-only: true
           dry-run: ${{github.ref != 'refs/heads/master'}}
 
       - name: Test the Docker image
         run: ./run-tests.sh
         env:
           DOCKER_REPO: renovate/go
+
+      - name: Build and Publish
+        uses: renovatebot/internal-tools@v0
+        with:
+          command: "docker-builder"
+          last-only: true
+          dry-run: ${{github.ref != 'refs/heads/master'}}
