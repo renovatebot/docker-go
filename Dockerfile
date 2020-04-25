@@ -1,4 +1,4 @@
-FROM renovate/buildpack:1@sha256:c6f6576e75d493c4a1ff50eb620cbd16ac38221f8c705ed5be3144d940e20d72
+FROM renovate/buildpack:1@sha256:1778d9326950d56e676e52770904b91ee966f39457604f3e822eac1be5597882
 
 # renovate: datasource=docker depName=golang versioning=docker
 ARG GOLANG_VERSION=1.14.2
