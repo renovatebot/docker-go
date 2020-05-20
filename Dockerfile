@@ -1,7 +1,7 @@
 # renovate: datasource=docker depName=golang versioning=docker
 ARG GOLANG_VERSION=1.14.3
 
-FROM renovate/buildpack:2-golang@sha256:ddcf60dc257de249c2e3ff17608ba482962b948c59e84a5a0be88493ae73f8be
+FROM renovate/buildpack:2-golang@sha256:d7dcdabdb370cfa4bd324d0d30f013b41cddb87f96ebd4f96bb26926a97c18d1
 
 RUN install-apt bzr mercurial
 
