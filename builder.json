@@ -1,6 +1,6 @@
 {
   "image": "go",
   "buildArg": "GOLANG_VERSION",
-  "startVersion": "1.14.2",
+  "startVersion": "1.12",
   "cache": "docker-build-cache"
 }
