@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=golang versioning=docker
-ARG GOLANG_VERSION=1.15.3
+ARG GOLANG_VERSION=1.15.4
 
 FROM renovate/buildpack:2-golang@sha256:c4ff8a1ac81d2189021fd5b85457befd3268499be29a5c4187cfbfbd8c6657f8
 
