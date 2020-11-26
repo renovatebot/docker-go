@@ -17,8 +17,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-
     strategy:
       matrix:
         flavor: [latest, bionic, focal]
