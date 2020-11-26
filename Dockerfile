@@ -1,9 +1,19 @@
+#--------------------------------------
+# Ubuntu base image to use
+#--------------------------------------
+ARG FLAVOR=
+
+#--------------------------------------
+# renovate latest version tag
+#--------------------------------------
+
 # renovate: datasource=docker depName=golang versioning=docker
 ARG GOLANG_VERSION=1.15.5
 
-FROM renovate/buildpack:2-golang@sha256:e143bdfd8e1742988c8d876254e926b688b077a0e31c74d8c97a8388ff8dff96
-
-RUN install-apt bzr mercurial
+#--------------------------------------
+# Image: final
+#--------------------------------------
+FROM renovate/buildpack:2-golang${FLAVOR}
 
 ARG GOLANG_VERSION
 RUN install-tool golang
