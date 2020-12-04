@@ -8,7 +8,7 @@ ARG FLAVOR=
 #--------------------------------------
 
 # renovate: datasource=docker depName=golang versioning=docker
-ARG GOLANG_VERSION=1.15.5
+ARG GOLANG_VERSION=1.15.6
 
 #--------------------------------------
 # Image: final
