@@ -1,5 +1,0 @@
-# renovate rebuild trigger
-
-FROM renovate/buildpack:2-golang@sha256:e143bdfd8e1742988c8d876254e926b688b077a0e31c74d8c97a8388ff8dff96
-FROM renovate/buildpack:2-golang-bionic@sha256:c5be14c972cd856d120d673792e7feea3aceea8d1000d01345499403f2eefd45
-FROM renovate/buildpack:2-golang-focal@sha256:258a6c7eb67a9bf7ec3147880ed6c7dfaf99a6f2ba5261e58a8a21836ed3e536
