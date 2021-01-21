@@ -10,9 +10,9 @@ ARG FLAVOR=latest
 # renovate: datasource=docker depName=golang versioning=docker
 ARG GOLANG_VERSION=1.15.7
 
-FROM renovate/buildpack:2-golang@sha256:402df2884d4ba02dbe0dcd5e9904f7e2edfd42c76045120fbe55c5a96a020c79 as base-latest
-FROM renovate/buildpack:2-golang-bionic@sha256:229662704d5943d8511a656ef4598c54c1f6c2d29c4ffed8c3376486055422cf as base-bionic
-FROM renovate/buildpack:2-golang-focal@sha256:dacc9499a9e00f8e79f2f9a8a7ccf942a9415ca871d533bd23f988f5363e9319 as base-focal
+FROM renovate/buildpack:2-golang@sha256:ce0d8641e4bdc0fdeb2b5197185698331ee5b79836172d04edae1d674352fb5b as base-latest
+FROM renovate/buildpack:2-golang-bionic@sha256:c8fe29b51fcf63e9eb4da471fc47700b1821c592fcc81d0f6760dfd80375a46d as base-bionic
+FROM renovate/buildpack:2-golang-focal@sha256:f76044925e6d00ddd82ebdf85377d9d1b185d1943a48a42ed6e2a189f8847642 as base-focal
 
 #--------------------------------------
 # Image: final
