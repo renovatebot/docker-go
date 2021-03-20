@@ -4,4 +4,4 @@
 
 # docker-go
 
-This repository is the source for the Docker Hub image `renovate/go`. Commits to `master` branch are automatically built and published.
+This repository is the source for the Docker Hub image `renovate/go`. Commits to `main` branch are automatically built and published.
