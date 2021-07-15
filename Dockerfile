@@ -4,7 +4,7 @@ ARG GOLANG_VERSION=1.16.6
 #--------------------------------------
 # Image: final
 #--------------------------------------
-FROM renovate/buildpack:5-golang@sha256:1eadb376a059031c63584a4e13353ec0683e134dcce5fa7f836feb06857e4aea
+FROM renovate/buildpack:5-golang@sha256:5efcf770583572003e51bcb9e6f8fdd621864d7c1e7b5a0faf23e3666321ba82
 
 ARG GOLANG_VERSION
 RUN install-tool golang
