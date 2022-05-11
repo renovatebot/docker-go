@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=golang versioning=docker
-ARG GOLANG_VERSION=1.18.1
+ARG GOLANG_VERSION=1.18.2
 
 #--------------------------------------
 # Image: final
